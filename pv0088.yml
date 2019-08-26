@@ -1,0 +1,25 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  labels:
+    volume: pv0088
+  name: pv0088
+  annotations:
+    volume.beta.kubernetes.io/storage-class: nfs
+spec:
+  accessModes:
+  - ReadWriteOnce
+  capacity:
+    storage: 100Gi
+  local:
+    path: /var/lib/minishift/base/openshift.local.pv/pv0087
+  persistentVolumeReclaimPolicy: Retain
+  storageClassName: nfs
+  nodeAffinity:
+    required:
+      nodeSelectorTerms:
+      - matchExpressions:
+        - key: kubernetes.io/hostname
+          operator: In
+          values:
+          - minishift
