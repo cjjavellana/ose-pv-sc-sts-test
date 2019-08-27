@@ -8,11 +8,11 @@ metadata:
     volume.beta.kubernetes.io/storage-class: nfs
 spec:
   accessModes:
-  - ReadWriteOnce
+  - ReadWriteMany
   capacity:
     storage: 100Gi
   local:
-    path: /var/lib/minishift/base/openshift.local.pv/pv0087
+    path: /tmp/pv
   persistentVolumeReclaimPolicy: Retain
   storageClassName: nfs
   nodeAffinity:
@@ -22,4 +22,4 @@ spec:
         - key: kubernetes.io/hostname
           operator: In
           values:
-          - minishift
+          - localhost
