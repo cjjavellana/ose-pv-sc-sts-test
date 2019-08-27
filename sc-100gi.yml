@@ -3,4 +3,4 @@ kind: StorageClass
 metadata:
  name: nfs
 provisioner: kubernetes.io/no-provisioner
-parameters:
+volumeBindingMode: WaitForFirstConsumer
