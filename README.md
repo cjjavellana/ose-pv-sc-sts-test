@@ -19,4 +19,5 @@ A set of definitions for using PVs on StatefulSets
 ## Misc
 
 1. pv0088.yml
-	nodeAffinity value used was derived from the output of `oc get nodes`. 
+	
+nodeAffinity value used was derived from the output of `oc get nodes`. 
